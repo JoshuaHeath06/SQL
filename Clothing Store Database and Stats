@@ -1,0 +1,27 @@
+CREATE TABLE shirts (id INTEGER PRIMARY KEY, color TEXT, sleeve_type TEXT, price_in_dollars INTEGER, quantity INTEGER);
+
+INSERT INTO shirts VALUES (1, "black", "long", 10, 10);
+INSERT INTO shirts VALUES (2, "black", "short", 9, 10);
+INSERT INTO shirts VALUES (3, "white", "long", 10, 15);
+INSERT INTO shirts VALUES (4, "white", "short", 9, 5);
+INSERT INTO shirts VALUES (5, "blue", "long", 12, 15);
+INSERT INTO shirts VALUES (6, "blue", "short", 10, 15);
+INSERT INTO shirts VALUES (7, "red", "long", 12, 15);
+INSERT INTO shirts VALUES (8, "red", "short", 10, 25);
+SELECT * FROM shirts;
+SELECT * FROM shirts;
+
+INSERT INTO shirts VALUES
+(9, "tan", "short", 8, 2),
+(10, "aqua", "long", 8, 3),
+(11, "teal", "long", 8, 1),
+(12, "gold", "short", 12, 10),
+(13, "gold", "long", 12, 4),
+(14, "pink", "short", 12, 5),
+(15, "pink", "long", 12, 6);
+
+SELECT * FROM shirts;
+
+SELECT * FROM Shirts ORDER BY price_in_dollars;
+
+
