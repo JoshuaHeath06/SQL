@@ -1,0 +1,96 @@
+/* What does the app's SQL look like? */
+CREATE TABLE games 
+(ID INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT); 
+
+CREATE TABLE game_hours
+(ID INTEGER PRIMARY KEY AUTOINCREMENT,
+game_id INTEGER,
+length INTEGER default UNKNOWN,
+hours_played INTEGER default UNKNOWN
+);
+
+CREATE TABLE reviews
+(ID INTEGER PRIMARY KEY AUTOINCREMENT,
+game_id INTEGER,
+customer_reviews TEXT default UNKNOWN,
+user_reviews TEXT default UNKNOWN
+);
+
+INSERT INTO games (name) VALUES
+("Assassin's Creed 3"),
+("Bioshock"),
+("Ace Combat 7"),
+("Borderlands 2"),
+("Borderlands 3"),
+("Dead Island"),
+("Dragon Ball Xenoverse"),
+("Dragon Ball Xenoverse 2"),
+("Dying Light"),
+("Endless Space 2"),
+("Fallout 4"),
+("Fallout:New Vegas"),
+("Left 4 Dead"),
+("Left 4 Dead 2")
+;
+
+Select * 
+    FROM games
+;
+
+INSERT INTO game_hours (game_id, hours_played) VALUES
+(1,15),
+(2,3.7),
+(3, 7.8),
+(4, 111.8),
+(5, 49.1),
+(6, 21.6),
+(7, 33.5),
+(8,54.8),
+(9,59.1),
+(10, 73.7),
+(11,108.5),
+(12, 140.9),
+(13, 197.8),
+(14, 370)
+;
+
+SELECT game_id, hours_played
+    FROM game_hours
+;
+INSERT INTO reviews (game_id, customer_reviews, user_reviews) VALUES
+(1, "mostly positive", "good"),
+(2, "very positive", "good"),
+(3, "mixed", "ok"),
+(4, "overwhelmingly positive", "great"),
+(5, "very positive", "good"),
+(6, "UNKNOWN", "ok"),
+(7, "very positive", "good"),
+(8, "very positive", "great"),
+(9, "overwhelmingly positive", "great"),
+(10, "very positive", "great"),
+(11, "very positive", "great"),
+(12, "overwhelmingly positive", "great"),
+(13, "overwhelmingly positive", "great"),
+(14, "overwhelmingly positive", "great")
+;
+
+UPDATE games
+    SET name = "Bioshock: Infinite"
+    WHERE ID = 2
+;
+
+SELECT *
+    FROM games
+;
+
+DELETE FROM reviews
+    WHERE customer_reviews = "mixed"
+;
+
+SELECT *
+    FROM reviews
+;
+
+
+    
